@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
-import TypewriterComponent from 'typewriter-effect';
 
 const HeroSection = () => {
   return (
