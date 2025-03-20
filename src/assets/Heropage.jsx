@@ -23,7 +23,7 @@ const HeroSection = () => {
           </span>
         </motion.h1>
         
-        <div className="text-2xl md:text-3xl text-white font-light mb-8 h-12">
+        {/* <div className="text-2xl md:text-3xl text-white font-light mb-8 h-12">
           <TypewriterComponent
             options={{
               strings: ['Software Engineer', 'Full-Stack Developer', 'Problem Solver', 'CS Student'],
@@ -31,7 +31,7 @@ const HeroSection = () => {
               loop: true,
             }}
           />
-        </div>
+        </div> */}
         
         <motion.p 
           className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl mx-auto"
