@@ -6,7 +6,7 @@ import './App.css';
 import HeroSection from './assets/Heropage';
 import AboutSection from './assets/About';
 import ProjectsSection from './assets/Projects';
-import ContactSection from './assets/Contact';
+// import ContactSection from './assets/Contact';
 import SkillsSection from './assets/Skills';
 
 const App = () => {
@@ -17,6 +17,11 @@ const App = () => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.3]);
 
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+
   // Handle smooth video playback during scrolling
   useEffect(() => {
     const video = videoRef.current;
@@ -24,22 +29,24 @@ const App = () => {
 
     const handleScroll = () => {
       setIsScrolling(true);
-      if (video && video.paused) video.play();
+      if (videoRef.current && videoRef.current.paused) videoRef.current.play();
 
       // Determine which section is currently in view
       const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      
-      if (scrollPosition < windowHeight * 0.5) {
+
+      const heroOffset = heroRef.current.offsetTop;
+      const aboutOffset = aboutRef.current.offsetTop;
+      const projectsOffset = projectsRef.current.offsetTop;
+      const skillsOffset = skillsRef.current.offsetTop;
+
+      if (scrollPosition < (aboutOffset + heroOffset) / 2) {
         setActiveSection('hero');
-      } else if (scrollPosition < windowHeight * 1.5) {
+      } else if (scrollPosition < (projectsOffset + aboutOffset) / 2) {
         setActiveSection('about');
-      } else if (scrollPosition < windowHeight * 2.5) {
+      } else if (scrollPosition < (skillsOffset + projectsOffset) / 2) {
         setActiveSection('projects');
-      } else if (scrollPosition < windowHeight * 3.5) {
+      } else {
         setActiveSection('skills');
-      }  else {
-        setActiveSection('contact');
       }
 
       clearTimeout(scrollTimeout);
@@ -114,7 +121,7 @@ const App = () => {
           
           <div className="flex items-center space-x-8">
             <ul className="hidden md:flex space-x-6">
-              {['hero', 'about', 'projects', 'skills', 'contact'].map((section) => (
+              {['hero', 'about', 'projects', 'skills'].map((section) => (
                 <li key={section}>
                   <a 
                     href={`#${section}`}
@@ -153,7 +160,7 @@ const App = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          {['hero', 'about', 'projects', 'skills', 'contact'].map((section) => (
+          {['hero', 'about', 'projects', 'skills'].map((section) => (
             <a 
               key={section}
               href={`#${section}`}
@@ -167,7 +174,7 @@ const App = () => {
               {section === 'about' && '👤'}
               {section === 'projects' && '💻'}
               {section === 'skills' && '🛠️'}
-              {section === 'contact' && '📧'}
+              {/* {section === 'contact' && '📧'} */}
             </a>
           ))}
         </motion.div>
@@ -211,21 +218,21 @@ const App = () => {
 
       {/* Main content */}
       <div className="relative z-10">
-        <section id="hero">
+      <section id="hero" ref={heroRef}>
           <HeroSection />
         </section>
-        <section id="about">
+        <section id="about" ref={aboutRef}>
           <AboutSection />
         </section>
-        <section id="projects">
+        <section id="projects" ref={projectsRef}>
           <ProjectsSection />
         </section>
-        <section id="skills">
+        <section id="skills" ref={skillsRef}>
           <SkillsSection />
         </section>
-        <section id="contact">
+        {/* <section id="contact">
           <ContactSection />
-        </section>
+        </section> */}
       </div>
 
       {/* Footer */}
