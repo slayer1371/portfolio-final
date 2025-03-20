@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
+import { Typewriter } from 'react-simple-typewriter';
+
 
 const HeroSection = () => {
   return (
@@ -22,6 +24,18 @@ const HeroSection = () => {
             Hello, I'm Mrinal.
           </span>
         </motion.h1>
+
+        <div className="text-2xl md:text-3xl text-white font-light mb-8 h-12">
+      <Typewriter
+        words={['Software Engineer', 'Full-Stack Developer', 'Problem Solver', 'CS Student']}
+        loop={Infinity} // Infinite loop
+        cursor
+        cursorStyle='|'
+        typeSpeed={70} // Adjust typing speed (milliseconds)
+        deleteSpeed={50} // Adjust deleting speed (milliseconds)
+        delaySpeed={1000} // Adjust delay between words (milliseconds)
+      />
+    </div>
         
         {/* <div className="text-2xl md:text-3xl text-white font-light mb-8 h-12">
           <TypewriterComponent
