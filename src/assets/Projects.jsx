@@ -14,42 +14,72 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'A fully functional e-commerce platform with user authentication, product management, cart functionality, and payment integration.',
-      image: '/ecommerce-project.jpg',
-      tags: ['fullstack', 'react', 'node'],
-      github: 'https://github.com/yourusername/ecommerce-project',
-      demo: 'https://ecommerce-project.example.com',
+      title: 'Recruitmate platform (Startup)',
+      description: 'RecruitMate is a startup that streamlines college recruitment for student-athletes through a tech-driven platform. Built with React and Tailwind for the frontend and integrating features like video portfolios, automated outreach, and email templates, it enhances athlete-coach connections.',
+      image: '/recruitmate.png',
+      tags: [ 'frontend', 'react', 'tailwind'],
+      github: 'https://github.com/slayer1371/recruitmate-v2',
+      demo: 'https://recruitmate-v2.vercel.app/',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/task-app.jpg',
-      tags: ['frontend', 'react', 'firebase'],
-      github: 'https://github.com/yourusername/task-management',
-      demo: 'https://task-app.example.com',
+      title: 'Supply chain management system using solidity contracts',
+      description: 'The Supply Chain Management System is a decentralized application built using Solidity smart contracts and ReactJS to ensure transparency and security in tracking goods.',
+      image: '/scm.png',
+      tags: ['frontend', 'react', 'blockchain'],
+      github: 'https://github.com/slayer1371/SCM_solidity_react',
+      demo: 'https://github.com/slayer1371/SCM_solidity_react',
       featured: true
     },
     {
       id: 3,
-      title: 'Data Visualization Dashboard',
-      description: 'An interactive dashboard displaying complex data sets with filterable charts, graphs, and exportable reports.',
-      image: '/dashboard.jpg',
-      tags: ['frontend', 'react', 'd3'],
-      github: 'https://github.com/yourusername/data-dashboard',
-      demo: 'https://data-dashboard.example.com',
-      featured: false
+      title: 'Beanbag scoring application',
+      description: 'The Beanbag Scoring Application is a web-based system built with React (frontend) and Flask (backend) to automate score tracking in beanbag competitions. It features real-time score updates, a user-friendly UI, and automated calculations to reduce human errors. ',
+      image: '/beanbag.png',
+      tags: ['frontend', 'react','python', 'flask'],
+      github: 'https://github.com/slayer1371/cs4good-beanbag',
+      demo: 'https://cs4good-beanbag.vercel.app/',
+      featured: true
     },
     {
       id: 4,
-      title: 'Machine Learning API',
-      description: 'A RESTful API that provides machine learning capabilities for image recognition and natural language processing.',
-      image: '/ml-api.jpg',
-      tags: ['backend', 'python', 'ai'],
-      github: 'https://github.com/yourusername/ml-api',
-      demo: 'https://ml-api.example.com',
+      title: 'Video platform for courses.(Has no data)',
+      description: 'The Video Platform for Courses is a web application built with React and Tailwind CSS, designed for seamless video content delivery. ',
+      image: '/video.png',
+      tags: ['frontend', 'react', 'tailwind'],
+      github: 'https://github.com/slayer1371/video-platform',
+      demo: 'https://video-platform-iota-seven.vercel.app/',
+      featured: true
+    },
+    {
+      id: 5,
+      title: 'Exercise tracker',
+      description: 'The Exercise Tracker is an application that allows users to log workouts with details like exercise type, duration, and date. Built using Node.js, Express, and MongoDB, it features a REST API for managing user exercise logs and supports querying workouts by date range.',
+      image: '/exercise.png',
+      tags: ['backend', 'node','mongoose', 'rest'],
+      github: 'https://github.com/slayer1371/exercise_tracker',
+      demo: 'https://github.com/slayer1371/exercise_tracker',
+      featured: false
+    },
+    {
+      id: 6,
+      title: 'URL shortener',
+      description: 'The URL Shortener is a backend application built with Node.js, Express, and MongoDB, allowing users to generate shortened URLs. It features a REST API for creating and retrieving shortened links, stores mappings in a NoSQL database, and handles redirects efficiently.',
+      image: '/url.png',
+      tags: ['backend', 'node','MongoDB'],
+      github: 'https://github.com/slayer1371/url_shortener',
+      demo: 'https://github.com/slayer1371/url_shortener',
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'Header parser microservice',
+      description: 'The Header Parser Microservice is a backend service built with Node.js and Express that extracts client request headers. It retrieves details like IP address, preferred languages, and user-agent from incoming HTTP requests and returns them as a JSON response.',
+      image: '/header.png',
+      tags: ['backend', 'node'],
+      github: 'https://github.com/slayer1371/header_Parser_microservice',
+      demo: 'https://github.com/slayer1371/header_Parser_microservice',
       featured: false
     },
   ];
@@ -82,7 +112,6 @@ const ProjectsSection = () => {
     { id: 'frontend', label: 'Frontend' },
     { id: 'backend', label: 'Backend' },
     { id: 'fullstack', label: 'Full Stack' },
-    { id: 'ai', label: 'AI/ML' }
   ];
 
   return (
