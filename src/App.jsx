@@ -8,6 +8,7 @@ import AboutSection from './assets/About';
 import ProjectsSection from './assets/Projects';
 // import ContactSection from './assets/Contact';
 import SkillsSection from './assets/Skills';
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const videoRef = useRef(null);
@@ -90,6 +91,7 @@ const App = () => {
 
   return (
     <div className={`relative w-full ${darkMode ? 'dark' : ''}`}>
+    <Analytics />
       {/* Fullscreen background video with dynamic opacity */}
       <motion.div 
         className="fixed top-0 h-screen w-full overflow-hidden"
