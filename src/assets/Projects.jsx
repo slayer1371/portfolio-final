@@ -24,6 +24,16 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
+      title: 'CarShare',
+      description: 'Platform I build to localise Car share. Anyone anywhere can rent their neighbours car when they\'re not using it, paying them for the time in return. ',
+      image: '/carshar.png',
+      tags: [ 'fullstack', 'react', 'tailwind','typescript'],
+      github: 'https://github.com/slayer1371/Peer-CarShare',
+      demo: 'https://github.com/slayer1371/Peer-CarShare',
+      featured: true
+    },
+    {
+      id: 3,
       title: 'Supply chain management system using solidity contracts',
       description: 'The Supply Chain Management System is a decentralized application built using Solidity smart contracts and ReactJS to ensure transparency and security in tracking goods.',
       image: '/scm.png',
@@ -33,7 +43,7 @@ const ProjectsSection = () => {
       featured: true
     },
     {
-      id: 3,
+      id: 4,
       title: 'Beanbag scoring application',
       description: 'The Beanbag Scoring Application is a web-based system built with React (frontend) and Flask (backend) to automate score tracking in beanbag competitions. It features real-time score updates, a user-friendly UI, and automated calculations to reduce human errors. ',
       image: '/beanbag.png',
@@ -43,7 +53,7 @@ const ProjectsSection = () => {
       featured: true
     },
     {
-      id: 4,
+      id: 5,
       title: 'Video platform for courses.(Has no data)',
       description: 'The Video Platform for Courses is a web application built with React and Tailwind CSS, designed for seamless video content delivery. ',
       image: '/video.png',
@@ -53,7 +63,7 @@ const ProjectsSection = () => {
       featured: true
     },
     {
-      id: 5,
+      id: 6,
       title: 'Exercise tracker',
       description: 'The Exercise Tracker is an application that allows users to log workouts with details like exercise type, duration, and date. Built using Node.js, Express, and MongoDB, it features a REST API for managing user exercise logs and supports querying workouts by date range.',
       image: '/exercise.png',
@@ -63,7 +73,7 @@ const ProjectsSection = () => {
       featured: false
     },
     {
-      id: 6,
+      id: 7,
       title: 'URL shortener',
       description: 'The URL Shortener is a backend application built with Node.js, Express, and MongoDB, allowing users to generate shortened URLs. It features a REST API for creating and retrieving shortened links, stores mappings in a NoSQL database, and handles redirects efficiently.',
       image: '/url.png',
@@ -73,7 +83,7 @@ const ProjectsSection = () => {
       featured: false
     },
     {
-      id: 7,
+      id: 8,
       title: 'Header parser microservice',
       description: 'The Header Parser Microservice is a backend service built with Node.js and Express that extracts client request headers. It retrieves details like IP address, preferred languages, and user-agent from incoming HTTP requests and returns them as a JSON response.',
       image: '/header.png',
