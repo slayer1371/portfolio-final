@@ -25,7 +25,7 @@ const ProjectsSection = () => {
     {
       id: 2,
       title: 'CarShare',
-      description: 'Platform I build to localise Car share. Anyone anywhere can rent their neighbours car when they\'re not using it, paying them for the time in return. ',
+      description: 'The platform I am building enables local car-sharing, allowing individuals to rent out their neighbor\'s car when it\'s not in use. Renters can pay for the time they use the vehicle, fostering a convenient and community-driven way to share resources. ',
       image: '/carshar.png',
       tags: [ 'fullstack', 'react', 'tailwind','typescript'],
       github: 'https://github.com/slayer1371/Peer-CarShare',
