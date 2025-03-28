@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       title: 'Beanbag scoring application',
       description: 'The Beanbag Scoring Application is a web-based system built with React (frontend) and Flask (backend) to automate score tracking in beanbag competitions. It features real-time score updates, a user-friendly UI, and automated calculations to reduce human errors. ',
       image: '/beanbag.png',
-      tags: ['frontend', 'react','python', 'flask'],
+      tags: ['fullstack', 'react','python', 'flask'],
       github: 'https://github.com/slayer1371/cs4good-beanbag',
       demo: 'https://cs4good-beanbag.vercel.app/',
       featured: true
@@ -61,37 +61,37 @@ const ProjectsSection = () => {
       github: 'https://github.com/slayer1371/video-platform',
       demo: 'https://video-platform-iota-seven.vercel.app/',
       featured: true
-    },
-    {
-      id: 6,
-      title: 'Exercise tracker',
-      description: 'The Exercise Tracker is an application that allows users to log workouts with details like exercise type, duration, and date. Built using Node.js, Express, and MongoDB, it features a REST API for managing user exercise logs and supports querying workouts by date range.',
-      image: '/exercise.png',
-      tags: ['backend', 'node','mongoose', 'rest'],
-      github: 'https://github.com/slayer1371/exercise_tracker',
-      demo: 'https://github.com/slayer1371/exercise_tracker',
-      featured: false
-    },
-    {
-      id: 7,
-      title: 'URL shortener',
-      description: 'The URL Shortener is a backend application built with Node.js, Express, and MongoDB, allowing users to generate shortened URLs. It features a REST API for creating and retrieving shortened links, stores mappings in a NoSQL database, and handles redirects efficiently.',
-      image: '/url.png',
-      tags: ['backend', 'node','MongoDB'],
-      github: 'https://github.com/slayer1371/url_shortener',
-      demo: 'https://github.com/slayer1371/url_shortener',
-      featured: false
-    },
-    {
-      id: 8,
-      title: 'Header parser microservice',
-      description: 'The Header Parser Microservice is a backend service built with Node.js and Express that extracts client request headers. It retrieves details like IP address, preferred languages, and user-agent from incoming HTTP requests and returns them as a JSON response.',
-      image: '/header.png',
-      tags: ['backend', 'node'],
-      github: 'https://github.com/slayer1371/header_Parser_microservice',
-      demo: 'https://github.com/slayer1371/header_Parser_microservice',
-      featured: false
-    },
+    }
+    // {
+    //   id: 6,
+    //   title: 'Exercise tracker',
+    //   description: 'The Exercise Tracker is an application that allows users to log workouts with details like exercise type, duration, and date. Built using Node.js, Express, and MongoDB, it features a REST API for managing user exercise logs and supports querying workouts by date range.',
+    //   image: '/exercise.png',
+    //   tags: ['backend', 'node','mongoose', 'rest'],
+    //   github: 'https://github.com/slayer1371/exercise_tracker',
+    //   demo: 'https://github.com/slayer1371/exercise_tracker',
+    //   featured: false
+    // },
+    // {
+    //   id: 7,
+    //   title: 'URL shortener',
+    //   description: 'The URL Shortener is a backend application built with Node.js, Express, and MongoDB, allowing users to generate shortened URLs. It features a REST API for creating and retrieving shortened links, stores mappings in a NoSQL database, and handles redirects efficiently.',
+    //   image: '/url.png',
+    //   tags: ['backend', 'node','MongoDB'],
+    //   github: 'https://github.com/slayer1371/url_shortener',
+    //   demo: 'https://github.com/slayer1371/url_shortener',
+    //   featured: false
+    // },
+    // {
+    //   id: 8,
+    //   title: 'Header parser microservice',
+    //   description: 'The Header Parser Microservice is a backend service built with Node.js and Express that extracts client request headers. It retrieves details like IP address, preferred languages, and user-agent from incoming HTTP requests and returns them as a JSON response.',
+    //   image: '/header.png',
+    //   tags: ['backend', 'node'],
+    //   github: 'https://github.com/slayer1371/header_Parser_microservice',
+    //   demo: 'https://github.com/slayer1371/header_Parser_microservice',
+    //   featured: false
+    // },
   ];
 
   const filteredProjects = activeFilter === 'all' 
