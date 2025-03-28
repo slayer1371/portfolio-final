@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       title: 'CarShare',
       description: 'The platform I am building enables local car-sharing, allowing individuals to rent out their neighbor\'s car when it\'s not in use. Renters can pay for the time they use the vehicle, fostering a convenient and community-driven way to share resources. ',
       image: '/carshar.png',
-      tags: [ 'fullstack', 'react', 'tailwind','typescript'],
+      tags: [ 'fullstack', 'react', 'tailwind','typescript','backend'],
       github: 'https://github.com/slayer1371/Peer-CarShare',
       demo: 'https://github.com/slayer1371/Peer-CarShare',
       featured: true
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       title: 'Beanbag scoring application',
       description: 'The Beanbag Scoring Application is a web-based system built with React (frontend) and Flask (backend) to automate score tracking in beanbag competitions. It features real-time score updates, a user-friendly UI, and automated calculations to reduce human errors. ',
       image: '/beanbag.png',
-      tags: ['fullstack', 'react','python', 'flask'],
+      tags: ['fullstack', 'react','python', 'flask','backend'],
       github: 'https://github.com/slayer1371/cs4good-beanbag',
       demo: 'https://cs4good-beanbag.vercel.app/',
       featured: true
