@@ -100,19 +100,25 @@ const AboutSection = () => {
               <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                 <FaCode className="text-indigo-600 dark:text-indigo-400 text-2xl mb-2" />
                 <h3 className="font-medium text-gray-900 dark:text-white mb-1">Frontend</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">React, Tailwind</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">React(Javascript + Typescript), Tailwind</p>
               </div>
               
               <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                 <FaServer className="text-indigo-600 dark:text-indigo-400 text-2xl mb-2" />
                 <h3 className="font-medium text-gray-900 dark:text-white mb-1">Backend</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Node.js, Express</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Node.js, Express, REST</p>
               </div>
               
               <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                 <FaLaptopCode className="text-indigo-600 dark:text-indigo-400 text-2xl mb-2" />
                 <h3 className="font-medium text-gray-900 dark:text-white mb-1">Database</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">MongoDB, SQL</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">MongoDB, Postgres</p>
+              </div>
+
+              <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                <FaLaptopCode className="text-indigo-600 dark:text-indigo-400 text-2xl mb-2" />
+                <h3 className="font-medium text-gray-900 dark:text-white mb-1">Tools</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Git, Docker, Postman</p>
               </div>
               
             </motion.div>
@@ -122,7 +128,7 @@ const AboutSection = () => {
               className="pt-4"
             >
               <a 
-                href="#contact" 
+                href="https://www.linkedin.com/in/mrinal-sharma1371/" 
                 className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors duration-300"
               >
                 Let's connect
