@@ -80,13 +80,7 @@ const AboutSection = () => {
               >
                 I am a Software Engineer and MS CS Graduate from the University of Notre Dame (Class of 2026), obsessed with building scalable, high-performance applications. My sweet spot lies at the intersection of Full Stack Engineering and Generative AI—I don't just use APIs; I build the architectures that make them useful.
               </motion.p>
-              
-              <motion.p 
-                className="text-lg text-gray-300 mb-8 leading-relaxed"
-                variants={itemVariants}
-              >
-                I specialize in full-stack development, turning complex problems into elegant solutions. Whether it's architecting backend systems, creating responsive UIs, or launching startups, I bring a problem-solving mindset to every project.
-              </motion.p>
+
             </div>
 
             {/* Skill Cards */}
