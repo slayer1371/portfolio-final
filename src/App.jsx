@@ -1,37 +1,28 @@
 
 import { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from 'react-icons/fa';
 import './App.css';
-import HeroSection from './assets/Heropage';
+import ThreeDHero from './components/ThreeDHero';
 import AboutSection from './assets/About';
 import ProjectsSection from './assets/Projects';
-// import ContactSection from './assets/Contact';
 import SkillsSection from './assets/Skills';
 import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
-  const videoRef = useRef(null);
-  const [isScrolling, setIsScrolling] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [darkMode, setDarkMode] = useState(false);
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.3]);
 
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
 
-  // Handle smooth video playback during scrolling
+  // Handle active section tracking on scroll
   useEffect(() => {
-    const video = videoRef.current;
     let scrollTimeout = null;
 
     const handleScroll = () => {
-      setIsScrolling(true);
-      if (videoRef.current && videoRef.current.paused) videoRef.current.play();
-
       // Determine which section is currently in view
       const scrollPosition = window.scrollY;
 
@@ -51,10 +42,6 @@ const App = () => {
       }
 
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        setIsScrolling(false);
-        if (video) video.pause();
-      }, 150);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -65,72 +52,40 @@ const App = () => {
     };
   }, []);
 
-  // Handle video looping
-  useEffect(() => {
-    const video = videoRef.current;
-    
-    const handleVideoEnd = () => {
-      if (video) {
-        video.currentTime = 0;
-        if (isScrolling) {
-          video.play();
-        }
-      }
-    };
-
-    if (video) {
-      video.addEventListener('ended', handleVideoEnd);
-    }
-
-    return () => {
-      if (video) {
-        video.removeEventListener('ended', handleVideoEnd);
-      }
-    };
-  }, [isScrolling]);
-
   return (
-    <div className={`relative w-full ${darkMode ? 'dark' : ''}`}>
-    <Analytics />
-      {/* Fullscreen background video with dynamic opacity */}
-      <motion.div 
-        className="fixed top-0 h-screen w-full overflow-hidden"
-        style={{ opacity }}
-      >
-        <video
-          ref={videoRef}
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          src="/port4cut1.mp4"
-          muted
-          playsInline
-          autoPlay
-          loop
-        />
-        <div className={`absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 ${darkMode ? 'opacity-70' : 'opacity-40'}`} />
-      </motion.div>
+    <div className="relative w-full">
+      <Analytics />
+      {/* Background gradient */}
+      <div 
+        className="fixed top-0 h-screen w-full bg-gradient-to-b from-black via-gray-950 to-black"
+      />
 
       {/* Navigation bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-sm transition-all duration-300 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-          <motion.div 
-            className="text-2xl font-bold text-indigo-600 dark:text-indigo-400"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+      <motion.nav 
+        className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/10"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <motion.a 
+            href="#hero"
+            className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 hover:opacity-80 transition-opacity"
+            whileHover={{ scale: 1.05 }}
           >
-            Mrinal Sharma
-          </motion.div>
+            MS
+          </motion.a>
           
           <div className="flex items-center space-x-8">
-            <ul className="hidden md:flex space-x-6">
+            <ul className="hidden md:flex space-x-8">
               {['hero', 'about', 'projects', 'skills'].map((section) => (
                 <li key={section}>
                   <a 
                     href={`#${section}`}
-                    className={`text-sm font-medium transition-colors duration-300 ${
+                    className={`text-sm font-semibold transition-colors duration-300 hover:text-cyan-400 ${
                       activeSection === section 
-                        ? 'text-indigo-600 dark:text-indigo-400' 
-                        : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                        ? 'text-cyan-400' 
+                        : 'text-gray-300'
                     }`}
                   >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -143,85 +98,87 @@ const App = () => {
               href="/resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md transition-colors duration-300"
+              className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:shadow-lg hover:shadow-cyan-500/50 text-white py-2.5 px-5 rounded-lg font-semibold transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaFileDownload />
+              <FaFileDownload size={16} />
               <span>Resume</span>
             </motion.a>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile navigation */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 md:hidden">
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden">
         <motion.div 
-          className="flex items-center space-x-4 bg-white dark:bg-gray-900 rounded-full shadow-lg px-4 py-2"
-          initial={{ y: 50, opacity: 0 }}
+          className="flex items-center space-x-3 bg-black/60 backdrop-blur-xl border border-white/20 rounded-full shadow-2xl px-4 py-3"
+          initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
         >
           {['hero', 'about', 'projects', 'skills'].map((section) => (
             <a 
               key={section}
               href={`#${section}`}
-              className={`p-2 rounded-full ${
+              className={`p-2 rounded-full transition-all duration-300 ${
                 activeSection === section 
-                  ? 'bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400' 
-                  : 'text-gray-700 dark:text-gray-300'
+                  ? 'bg-cyan-600/80 text-white shadow-lg shadow-cyan-500/50' 
+                  : 'text-gray-400 hover:text-white'
               }`}
             >
               {section === 'hero' && '🏠'}
               {section === 'about' && '👤'}
               {section === 'projects' && '💻'}
               {section === 'skills' && '🛠️'}
-              {/* {section === 'contact' && '📧'} */}
             </a>
           ))}
         </motion.div>
       </div>
 
       {/* Social media links */}
-      <div className="fixed left-4 bottom-1/2 transform translate-y-1/2 z-40 hidden md:block">
+      <div className="fixed left-6 bottom-1/2 transform translate-y-1/2 z-40 hidden lg:block">
         <motion.div 
           className="flex flex-col space-y-4"
-          initial={{ x: -20, opacity: 0 }}
+          initial={{ x: -30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.7, staggerChildren: 0.1 }}
+          transition={{ delay: 0.8, staggerChildren: 0.1 }}
         >
           <motion.a 
             href="https://github.com/slayer1371" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
-            whileHover={{ scale: 1.1, rotate: 5 }}
+            className="p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:text-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FaGithub size={20} />
+            <FaGithub size={22} />
           </motion.a>
           <motion.a 
-            href="https://linkedin.com/in/mrinal-sharma1371" 
+            href="https://linkedin.com/in/mrinal-sharma-nd" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
-            whileHover={{ scale: 1.1, rotate: -5 }}
+            className="p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:text-blue-400 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50"
+            whileHover={{ scale: 1.15, rotate: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FaLinkedin size={20} />
+            <FaLinkedin size={22} />
           </motion.a>
           <motion.a 
-            href="mailto:msharma2@nd.edu" 
-            className="p-3 bg-white dark:bg-gray-900 rounded-full shadow-md text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
-            whileHover={{ scale: 1.1, rotate: 5 }}
+            href="mailto:mrinalworkus@gmail.com" 
+            className="p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:text-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FaEnvelope size={20} />
+            <FaEnvelope size={22} />
           </motion.a>
         </motion.div>
       </div>
 
       {/* Main content */}
       <div className="relative z-10">
-      <section id="hero" ref={heroRef}>
-          <HeroSection />
+        <section id="hero" ref={heroRef}>
+          <ThreeDHero />
         </section>
         <section id="about" ref={aboutRef}>
           <AboutSection />
@@ -232,19 +189,16 @@ const App = () => {
         <section id="skills" ref={skillsRef}>
           <SkillsSection />
         </section>
-        {/* <section id="contact">
-          <ContactSection />
-        </section> */}
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 bg-gray-100 dark:bg-gray-900 py-6">
+      <footer className="relative z-10 bg-black border-t border-white/10 py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-gray-700 dark:text-gray-300">
-            © {new Date().getFullYear()} Mrinal Sharma. All rights reserved.
+          <p className="text-gray-400 font-medium">
+            © {new Date().getFullYear()} Mrinal Sharma. Crafted with passion.
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-            Built with React, Tailwind & Framer Motion
+          <p className="text-sm text-gray-500 mt-2">
+            Built with React • Vite • Tailwind • Framer Motion • Three.js
           </p>
         </div>
       </footer>

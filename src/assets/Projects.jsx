@@ -12,8 +12,39 @@ const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
   const projects = [
-    {
+      {
       id: 1,
+      title: 'NeighborDrive',
+      description: 'A modern car-sharing platform connecting owners with renters in their community. Handles listing management, availability checking, secure Stripe payments, and AI-powered damage dispute resolution using Google Gemini for photo analysis.',
+      image: '/neighbordrive.png',
+      tags: ['fullstack', 'nextjs', 'stripe'],
+      github: 'https://github.com/slayer1371/neighbordrive',
+      demo: 'https://neighbor-drive.vercel.app/',
+      featured: true
+    },
+    {
+      id: 2,
+      title: 'InsightEngine',
+      description: 'An AI-powered analytics dashboard that transforms raw sales data into actionable insights. Upload CSV files, auto-map to database, and use natural language-to-SQL conversion powered by Google Gemini for intelligent data analysis.',
+      image: '/insightengine.png',
+      tags: ['fullstack', 'nextjs', 'ai'],
+      github: 'https://github.com/slayer1371/insightengine',
+      demo: 'https://insight-engine-eight.vercel.app/',
+      featured: true
+    },
+    {
+      id: 3,
+      title: 'DevFlow',
+      description: 'A real-time collaborative code editor enabling multiple users to edit code simultaneously in isolated rooms. Uses Operational Transformation to resolve concurrent edits and maintain document consistency. Frontend: Next.js with Monaco Editor, Backend: Node.js with WebSocket server.',
+      image: '/devflow.png',
+      tags: [ 'fullstack', 'nextjs', 'typescript'],
+      github: 'https://github.com/slayer1371/devflow',
+      demo: 'https://devflow-umber.vercel.app/',
+      featured: true
+    },
+
+        {
+      id: 4,
       title: 'Recruitmate platform (Startup)',
       description: 'RecruitMate is a startup that streamlines college recruitment for student-athletes through a tech-driven platform. Built with React and Tailwind for the frontend and integrating features like video portfolios, automated outreach, and email templates, it enhances athlete-coach connections.',
       image: '/recruitmate.png',
@@ -23,27 +54,7 @@ const ProjectsSection = () => {
       featured: true
     },
     {
-      id: 2,
-      title: 'CarShare',
-      description: 'The platform I am building enables local car-sharing, allowing individuals to rent out their neighbor\'s car when it\'s not in use. Renters can pay for the time they use the vehicle, fostering a convenient and community-driven way to share resources. ',
-      image: '/carshar.png',
-      tags: [ 'fullstack', 'react', 'tailwind','typescript','backend'],
-      github: 'https://github.com/slayer1371/Peer-CarShare',
-      demo: 'https://github.com/slayer1371/Peer-CarShare',
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'Supply chain management system using solidity contracts',
-      description: 'The Supply Chain Management System is a decentralized application built using Solidity smart contracts and ReactJS to ensure transparency and security in tracking goods.',
-      image: '/scm.png',
-      tags: ['frontend', 'react', 'blockchain'],
-      github: 'https://github.com/slayer1371/SCM_solidity_react',
-      demo: 'https://github.com/slayer1371/SCM_solidity_react',
-      featured: true
-    },
-    {
-      id: 4,
+      id: 5,
       title: 'Beanbag scoring application',
       description: 'The Beanbag Scoring Application is a web-based system built with React (frontend) and Flask (backend) to automate score tracking in beanbag competitions. It features real-time score updates, a user-friendly UI, and automated calculations to reduce human errors. ',
       image: '/beanbag.png',
@@ -52,45 +63,16 @@ const ProjectsSection = () => {
       demo: 'https://cs4good-beanbag.vercel.app/',
       featured: true
     },
-    {
-      id: 5,
-      title: 'Video platform for courses.(Has no data)',
-      description: 'The Video Platform for Courses is a web application built with React and Tailwind CSS, designed for seamless video content delivery. ',
-      image: '/video.png',
-      tags: ['frontend', 'react', 'tailwind'],
-      github: 'https://github.com/slayer1371/video-platform',
-      demo: 'https://video-platform-iota-seven.vercel.app/',
-      featured: true
-    }
+
     // {
     //   id: 6,
-    //   title: 'Exercise tracker',
-    //   description: 'The Exercise Tracker is an application that allows users to log workouts with details like exercise type, duration, and date. Built using Node.js, Express, and MongoDB, it features a REST API for managing user exercise logs and supports querying workouts by date range.',
-    //   image: '/exercise.png',
-    //   tags: ['backend', 'node','mongoose', 'rest'],
-    //   github: 'https://github.com/slayer1371/exercise_tracker',
-    //   demo: 'https://github.com/slayer1371/exercise_tracker',
-    //   featured: false
-    // },
-    // {
-    //   id: 7,
-    //   title: 'URL shortener',
-    //   description: 'The URL Shortener is a backend application built with Node.js, Express, and MongoDB, allowing users to generate shortened URLs. It features a REST API for creating and retrieving shortened links, stores mappings in a NoSQL database, and handles redirects efficiently.',
-    //   image: '/url.png',
-    //   tags: ['backend', 'node','MongoDB'],
-    //   github: 'https://github.com/slayer1371/url_shortener',
-    //   demo: 'https://github.com/slayer1371/url_shortener',
-    //   featured: false
-    // },
-    // {
-    //   id: 8,
-    //   title: 'Header parser microservice',
-    //   description: 'The Header Parser Microservice is a backend service built with Node.js and Express that extracts client request headers. It retrieves details like IP address, preferred languages, and user-agent from incoming HTTP requests and returns them as a JSON response.',
-    //   image: '/header.png',
-    //   tags: ['backend', 'node'],
-    //   github: 'https://github.com/slayer1371/header_Parser_microservice',
-    //   demo: 'https://github.com/slayer1371/header_Parser_microservice',
-    //   featured: false
+    //   title: 'Pulsecheck',
+    //   description: 'A comprehensive Kubernetes health monitoring system that provides real-time insights into cluster health, node status, pod performance, and resource utilization. Built with modern DevOps practices for production-grade monitoring and alerting.',
+    //   image: '/pulsecheck.png',
+    //   tags: ['fullstack', 'kubernetes', 'backend'],
+    //   github: 'https://github.com/slayer1371/pulsecheck',
+    //   demo: 'https://github.com/slayer1371/pulsecheck',
+    //   featured: true
     // },
   ];
 
@@ -125,26 +107,36 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white/70 dark:bg-gray-900/70 py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black py-20 px-6">
+      <div className="container mx-auto max-w-7xl">
         <motion.div 
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            My <span className="text-indigo-600 dark:text-indigo-400">Projects</span>
+          <motion.div 
+            className="inline-block mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 uppercase tracking-widest">
+              Portfolio
+            </span>
+          </motion.div>
+
+          <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Projects</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my technical skills and problem-solving abilities.
-            Each project represents unique challenges I've overcome and technologies I've mastered.
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            A collection of full-stack projects demonstrating my expertise in modern web development, problem-solving, and architectural design.
           </p>
         </motion.div>
 
         <motion.div 
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-16"
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -153,10 +145,10 @@ const ProjectsSection = () => {
             <motion.button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeFilter === filter.id 
-                  ? 'bg-indigo-600 text-white' 
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-500/50' 
+                  : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/10 hover:border-white/30'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -173,86 +165,99 @@ const ProjectsSection = () => {
             initial="hidden"
             animate="visible"
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
           >
             {filteredProjects.map(project => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
               >
-                <div className="relative group h-60 overflow-hidden">
+                {/* Image Container */}
+                <div className="relative h-64 overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    // onError={(e) => {
-                    //   e.target.onerror = null;
-                    //   e.target.src = "/api/placeholder/600/400";
-                    // }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <div className="flex justify-between items-center">
-                        <div className="flex gap-2">
-                          {project.tags.map(tag => (
-                            <span 
-                              key={tag} 
-                              className="text-xs px-2 py-1 bg-indigo-600/80 text-white rounded"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex gap-2">
-                          <a 
-                            href={project.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="p-2 bg-gray-900/80 text-white rounded-full hover:bg-gray-900 transition-colors duration-300"
-                          >
-                            <FaGithub />
-                          </a>
-                          <a 
-                            href={project.demo} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="p-2 bg-indigo-600/80 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300"
-                          >
-                            <FaExternalLinkAlt />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                    {project.featured && (
-                      <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs font-medium px-2.5 py-0.5 rounded">
-                        Featured
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    {project.description}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <a 
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Quick Links Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <motion.a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 bg-gray-900/90 text-white rounded-full hover:bg-cyan-600 transition-all duration-300 backdrop-blur-sm"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FaGithub size={24} />
+                    </motion.a>
+                    <motion.a 
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors duration-300 flex items-center"
+                      className="p-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      View Details
-                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    </a>
+                      <FaExternalLinkAlt size={24} />
+                    </motion.a>
                   </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">
+                      {project.title}
+                    </h3>
+                    {project.featured && (
+                      <motion.span 
+                        className="bg-gradient-to-r from-cyan-600/80 to-blue-600/80 text-white text-xs font-bold px-3 py-1 rounded-full"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring" }}
+                      >
+                        Featured
+                      </motion.span>
+                    )}
+                  </div>
+                  
+                  <p className="text-gray-400 mb-6 leading-relaxed text-sm line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map(tag => (
+                      <span 
+                        key={tag} 
+                        className="text-xs px-3 py-1 bg-cyan-600/20 text-cyan-300 rounded-full border border-cyan-500/30 hover:border-cyan-500/60 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <motion.a 
+                    href={project.demo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-cyan-400 font-semibold hover:text-blue-400 transition-colors duration-300 group/link"
+                  >
+                    Explore Project
+                    <motion.svg 
+                      className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </motion.svg>
+                  </motion.a>
                 </div>
               </motion.div>
             ))}
@@ -264,16 +269,17 @@ const ProjectsSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="text-center py-12"
+            className="text-center py-16"
           >
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-400 text-lg">
               No projects found with the selected filter.
             </p>
           </motion.div>
         )}
 
+        {/* CTA Section */}
         <motion.div 
-          className="mt-16 text-center"
+          className="text-center pt-8"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -282,10 +288,18 @@ const ProjectsSection = () => {
             href="https://github.com/slayer1371" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="inline-flex items-center bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 text-white py-3 px-6 rounded-lg transition-colors duration-300"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 group"
           >
-            <FaGithub className="mr-2" />
-            See More on GitHub
+            <FaGithub className="mr-2 group-hover:scale-110 transition-transform" />
+            View More on GitHub
+            <motion.svg 
+              className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </motion.svg>
           </a>
         </motion.div>
       </div>
