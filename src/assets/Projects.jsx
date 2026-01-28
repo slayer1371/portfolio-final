@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       title: 'NeighborDrive',
       description: 'A modern car-sharing platform connecting owners with renters in their community. Handles listing management, availability checking, secure Stripe payments, and AI-powered damage dispute resolution using Google Gemini for photo analysis.',
       image: '/neighbordrive.png',
-      tags: ['fullstack', 'nextjs', 'stripe'],
+      tags: ['fullstack', 'nextjs', 'stripe', 'aws-s3', 'cloudfront'],
       github: 'https://github.com/slayer1371/neighbordrive',
       demo: 'https://neighbor-drive.vercel.app/',
       featured: true
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       title: 'InsightEngine',
       description: 'An AI-powered analytics dashboard that transforms raw sales data into actionable insights. Upload CSV files, auto-map to database, and use natural language-to-SQL conversion powered by Google Gemini for intelligent data analysis.',
       image: '/insightengine.png',
-      tags: ['fullstack', 'nextjs', 'ai'],
+      tags: ['fullstack', 'nextjs', 'ai', 'gemini-api'],
       github: 'https://github.com/slayer1371/insightengine',
       demo: 'https://insight-engine-eight.vercel.app/',
       featured: true
