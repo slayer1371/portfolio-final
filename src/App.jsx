@@ -133,6 +133,18 @@ const App = () => {
               {section === 'skills' && '🛠️'}
             </a>
           ))}
+          <div className="w-px h-6 bg-white/20 mx-1" />
+          <motion.a 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-2 px-3 rounded-full font-semibold text-xs transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaFileDownload size={14} />
+            <span>Resume</span>
+          </motion.a>
         </motion.div>
       </div>
 
