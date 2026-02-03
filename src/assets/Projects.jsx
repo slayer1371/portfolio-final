@@ -54,6 +54,16 @@ const ProjectsSection = () => {
       featured: true
     },
     {
+      id: 6,
+      title: 'Pulsecheck',
+      description: 'A comprehensive Kubernetes health monitoring system that provides real-time insights into cluster health, node status, pod performance, and resource utilization. Built with modern DevOps practices for production-grade monitoring and alerting.',
+      image: '/pulsecheck.png',
+      tags: ['fullstack', 'kubernetes', 'backend'],
+      github: 'https://github.com/slayer1371/PulseCheck-Kubernetes_monitoring',
+      demo: 'https://github.com/slayer1371/PulseCheck-Kubernetes_monitoring',
+      featured: true
+    },
+    {
       id: 5,
       title: 'Beanbag scoring application',
       description: 'The Beanbag Scoring Application is a web-based system built with React (frontend) and Flask (backend) to automate score tracking in beanbag competitions. It features real-time score updates, a user-friendly UI, and automated calculations to reduce human errors. ',
@@ -62,18 +72,9 @@ const ProjectsSection = () => {
       github: 'https://github.com/slayer1371/cs4good-beanbag',
       demo: 'https://cs4good-beanbag.vercel.app/',
       featured: true
-    },
+    }
 
-    // {
-    //   id: 6,
-    //   title: 'Pulsecheck',
-    //   description: 'A comprehensive Kubernetes health monitoring system that provides real-time insights into cluster health, node status, pod performance, and resource utilization. Built with modern DevOps practices for production-grade monitoring and alerting.',
-    //   image: '/pulsecheck.png',
-    //   tags: ['fullstack', 'kubernetes', 'backend'],
-    //   github: 'https://github.com/slayer1371/pulsecheck',
-    //   demo: 'https://github.com/slayer1371/pulsecheck',
-    //   featured: true
-    // },
+    
   ];
 
   const filteredProjects = activeFilter === 'all' 
